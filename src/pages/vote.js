@@ -109,6 +109,10 @@ function Name() {
       new Audio('./assets/sucess.wav').play().then(router.reload())
     
     }
+    else{
+
+      alert("Make Sure To Vote For Every Category")
+    }
    }
 
 
