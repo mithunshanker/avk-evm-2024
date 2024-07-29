@@ -113,64 +113,112 @@ function Name() {
 
 
   return (
-   <>
-   <Head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
-  <title>EVM Admin Dashboard</title>
-</Head>
-    {/* ssp */}
-    
-   <h1>ssp</h1>
+  <>
+    <Head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+      <title>EVM Admin Dashboard</title>
+    </Head>
 
-   {
-sspNameData&&sspNameData.map((n)=>{
+    <div class="container-fluid mx-auto">
+
+      <div class="h-100 d-flex align-items-center justify-content-center ">
+      <button type="button" class="btn btn-lg btn-dark rounded-0 border border-1 border-secondary" data-bs-toggle="modal" data-bs-target="#ssp">      
+        <h1 class="display-1">Vote !</h1>
+
+    </button>
+      </div>
+
+
+      
+     
+      
+      <div class="modal fade" id="ssp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">      
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student President</h1>
+            </div>
+            <div class="modal-body">
+              {
+                sspNameData&&sspNameData.map((n)=>{
     return(
         <div class="form-check" >
   <input class="form-check-input" type="radio" name="flexRadioDefault1" id={`flexRadioDefault1${n.name}`} onChange={(e)=>{
     if(e.target.checked){
         setsspv(`/ssp/${n.id}/value`)
     }
-  }} />
-  <label class="form-check-label text-white" for={`flexRadioDefault1${n.name}`}>
+  }} required/>
+  <label class="form-check-label text-black" for={`flexRadioDefault1${n.name}`}>
     {n.name}
   </label>
+  
 </div>
 
     )
-})
+                })
+              }
+            </div>
+            <div class="modal-footer">
+            <button type="submit" class="btn btn-dark fw-bold rounded-0" data-bs-toggle="modal" data-bs-target="#ssvp">
+        Next
+      </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-   }
+      
 
-     {/* ssvp */}
-    
-     <h1>ssvp</h1>
-
-{
-ssvpNameData&&ssvpNameData.map((n)=>{
+      <div class="modal fade" id="ssvp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student Vice President</h1>
+      </div>
+      <div class="modal-body">
+              {
+        ssvpNameData&&ssvpNameData.map((n)=>{
     return(
         <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault2" id={`flexRadioDefault2${n.name}`} onChange={(e)=>{
     if(e.target.checked){
         setssvpv(`/ssvp/${n.id}/value`)
     }
-  }} />
-  <label class="form-check-label text-white" for={`flexRadioDefault2${n.name}`}>
+  }} required/>
+  <label class="form-check-label text-black fw-semibold " for={`flexRadioDefault2${n.name}`}>
     {n.name}
   </label>
 </div>
 
     )
-})
+        })
+        
+           }
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-warning rounded-0 text-black fw-bold" data-bs-toggle="modal" data-bs-target="#ssp">
+  Previous
+</button>
+      <button type="submit" class="btn btn-dark fw-bold rounded-0" data-bs-toggle="modal" data-bs-target="#sss">
+  Next
+</button>
+      </div>
+    </div>
+  </div>
+      </div>
 
-   }
 
-     {/* sss */}
-    
-     <h1>sss</h1>
 
-{
+      <div class="modal fade" id="sss" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student Secretary</h1>
+      </div>
+      <div class="modal-body">
+      {
 sssNameData&&sssNameData.map((n)=>{
     return(
         <div class="form-check">
@@ -179,7 +227,7 @@ sssNameData&&sssNameData.map((n)=>{
         setsssv(`/sss/${n.id}/value`)
     }
   }} />
-  <label class="form-check-label text-white" for={`flexRadioDefault3${n.name}`}>
+  <label class="form-check-label text-black" for={`flexRadioDefault3${n.name}`}>
     {n.name}
   </label>
 </div>
@@ -188,12 +236,30 @@ sssNameData&&sssNameData.map((n)=>{
 })
 
    }
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-warning rounded-0 text-black fw-bold" data-bs-toggle="modal" data-bs-target="#ssvp">
+  Previous
+</button>
+      <button type="button" class="btn btn-dark fw-bold rounded-0" data-bs-toggle="modal" data-bs-target="#scc">
+  Next
+</button>
+      </div>
+    </div>
+  </div>
+      </div>
 
-     {/* scc */}
-    
-     <h1>scc</h1>
 
-{
+
+
+<div class="modal fade" id="scc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Cultural Coordinator</h1>
+      </div>
+      <div class="modal-body">
+      {
 sccNameData&&sccNameData.map((n)=>{
     return(
         <div class="form-check">
@@ -202,7 +268,7 @@ sccNameData&&sccNameData.map((n)=>{
         setsccv(`/scc/${n.id}/value`)
     }
   }} />
-  <label class="form-check-label text-white" for={`flexRadioDefault4${n.name}`}>
+  <label class="form-check-label text-black" for={`flexRadioDefault4${n.name}`}>
     {n.name}
   </label>
 </div>
@@ -211,11 +277,25 @@ sccNameData&&sccNameData.map((n)=>{
 })
 
    }
-   
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-warning rounded-0 text-black fw-bold" data-bs-toggle="modal" data-bs-target="#sss">
+  Previous
+</button>
+      <button type="button" class="btn btn-success rounded-0 text-black fw-bold" onClick={castvote} >Submit</button>
 
-   <button  onClick={castvote} >Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
    </>
   )
 }
 
-export default Name
+export default Name     
