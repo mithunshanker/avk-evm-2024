@@ -110,8 +110,7 @@ function Name() {
     
     }
     else{
-
-      alert("Make Sure To Vote For Every Category")
+      alert("Please Vote For All The Posts")
     }
    }
 
