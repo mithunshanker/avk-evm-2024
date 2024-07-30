@@ -10,6 +10,11 @@ export default function Home() {
   const[ssvpvoteData,setssvpVotes] = useState()
   const[sssvoteData,setsssVotes] = useState()
   const[sccvoteData,setsccVotes] = useState()
+  const[jspvoteData,setjspVotes] = useState()
+  const[jsvpvoteData,setjsvpVotes] = useState()
+  const[jssvoteData,setjssVotes] = useState()
+  const[jccvoteData,setjccVotes] = useState()
+
 
 
  
@@ -53,7 +58,7 @@ const sssarray = sssdata&&Object.values(sssdata)
 setsssVotes(sssarray) 
 
 
-},[ssvpvoteData]);
+},[sssvoteData]);
 
 var sccvotes = database.ref('/scc');
 sccvotes.on('value', (snapshot) => {
@@ -65,7 +70,55 @@ const sccarray = sccdata&&Object.values(sccdata)
 setsccVotes(sccarray) 
 
 
-},[ssvpvoteData]);
+},[sccvoteData]);
+
+var sspvotes = database.ref('/jsp');
+sspvotes.on('value', (snapshot) => {
+const sspdata = snapshot.val();
+const ssparray = sspdata&&Object.values(sspdata)
+
+
+
+setjspVotes(ssparray) 
+
+
+},[jspvoteData]);
+
+var ssvpvotes = database.ref('/jsvp');
+ssvpvotes.on('value', (snapshot) => {
+const ssvpdata = snapshot.val();
+const ssvparray = ssvpdata&&Object.values(ssvpdata)
+
+
+
+setjsvpVotes(ssvparray) 
+
+
+},[jsvpvoteData]);
+
+var sssvotes = database.ref('/jss');
+sssvotes.on('value', (snapshot) => {
+const sssdata = snapshot.val();
+const sssarray = sssdata&&Object.values(sssdata)
+
+
+
+setjssVotes(sssarray) 
+
+
+},[jssvoteData]);
+
+var sccvotes = database.ref('/jcc');
+sccvotes.on('value', (snapshot) => {
+const sccdata = snapshot.val();
+const sccarray = sccdata&&Object.values(sccdata)
+
+
+
+setjccVotes(sccarray) 
+
+
+},[jccvoteData]);
  
   
  }, [])
@@ -250,6 +303,181 @@ setsccVotes(sccarray)
           </thead>
   { 
  sccvoteData&&sccvoteData.map((v)=>{
+  return(
+
+
+        
+         <tbody>
+            <tr>
+              <td>{v.name}</td>
+              <td>{v.value}</td>
+            </tr>
+          </tbody>
+ 
+
+  )
+ })
+ 
+ }
+           </table>
+         </div>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col p-1 rounded-2 ">
+      <center>
+        <h3 class="text-white">Junior Students President</h3>
+      </center>
+      <div class="card bg-dark rounded-0">
+        <div class="card-body p-0">
+          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+          <p class="card-text text-white py-1 px-2">{jspvoteData&&jspvoteData.length}</p>
+        </div>
+      </div>
+      <div class="card bg-transparent mt-2">
+        <div class="card-body p-0">
+          <table class="table table-striped table-dark">
+            <thead class="p-0">
+              <tr class="table-dark">
+                <th><h5 class="p-0">Candidates</h5></th>
+                <th><h5 class="p-0">Votes</h5></th>
+              </tr>
+            </thead>
+    { 
+   jspvoteData&&jspvoteData.map((v)=>{
+    return(
+
+
+          
+           <tbody>
+              <tr>
+                <td>{v.name}</td>
+                <td>{v.value}</td>
+              </tr>
+            </tbody>
+   
+
+    )
+   })
+   
+   }
+             </table>
+           </div>
+      </div>
+    </div>
+    <div class="col p-1 rounded-2 ">
+      <center>
+        <h3 class="text-white">Junior Students Vice President</h3>
+      </center>
+      <div class="card bg-dark rounded-0">
+          <div class="card-body p-0">
+            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+            <p class="card-text text-white py-1 px-2">{jsvpvoteData&&jsvpvoteData.length}</p>
+          </div>
+      </div>
+      <div class="card bg-transparent mt-2">
+        <div class="card-body p-0">
+          <table class="table table-striped table-dark">
+            <thead class="p-0">
+              <tr class="table-dark">
+                <th><h5 class="p-0">Candidates</h5></th>
+                <th><h5 class="p-0">Votes</h5></th>
+              </tr>
+            </thead>
+    { 
+   jsvpvoteData&&jsvpvoteData.map((v)=>{
+    return(
+
+
+          
+           <tbody>
+              <tr>
+                <td>{v.name}</td>
+                <td>{v.value}</td>
+              </tr>
+            </tbody>
+   
+
+    )
+   })
+   
+   }
+             </table>
+           </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col p-1 rounded-2 ">
+      <center>
+        <h3 class="text-white">Junior Students Secratary</h3>
+      </center>
+      <div class="card bg-dark rounded-0">
+        <div class="card-body p-0">
+          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+          <p class="card-text text-white py-1 px-2">{jssvoteData&&jssvoteData.length}</p>
+        </div>
+      </div>
+      <div class="card bg-transparent mt-2">
+      <div class="card-body p-0">
+        <table class="table table-striped table-dark">
+          <thead class="p-0">
+            <tr class="table-dark">
+              <th><h5 class="p-0">Candidates</h5></th>
+              <th><h5 class="p-0">Votes</h5></th>
+            </tr>
+          </thead>
+  { 
+ jssvoteData&&jssvoteData.map((v)=>{
+  return(
+
+
+        
+         <tbody>
+            <tr>
+              <td>{v.name}</td>
+              <td>{v.value}</td>
+            </tr>
+          </tbody>
+ 
+
+  )
+ })
+ 
+ }
+           </table>
+         </div>
+    </div>
+
+
+    </div>
+    <div class="col p-1 rounded-2 ">
+      <center>
+        <h3 class="text-white">Junior Cultural Coordinator</h3>
+      </center>
+      <div class="card bg-dark rounded-0">
+        <div class="card-body p-0">
+          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+          <p class="card-text text-white py-1 px-2">{jccvoteData&&jccvoteData.length}</p>
+        </div>
+      </div>
+      <div class="card bg-transparent mt-2">
+      <div class="card-body p-0">
+        <table class="table table-striped table-dark">
+          <thead class="p-0">
+            <tr class="table-dark">
+              <th><h5 class="p-0">Candidates</h5></th>
+              <th><h5 class="p-0">Votes</h5></th>
+            </tr>
+          </thead>
+  { 
+ jccvoteData&&jccvoteData.map((v)=>{
   return(
 
 
