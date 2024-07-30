@@ -138,7 +138,7 @@ function Name() {
         <div class="modal-dialog modal-fullscreen">
           <div class="modal-content">
             <div class="modal-header">      
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student President</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Junior Student President</h1>
             </div>
             <div class="modal-body">
               {
@@ -175,7 +175,7 @@ function Name() {
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student Vice President</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Junior Student Vice President</h1>
       </div>
       <div class="modal-body">
               {
@@ -215,7 +215,7 @@ function Name() {
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student Secretary</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Junior Student Secretary</h1>
       </div>
       <div class="modal-body">
       {
@@ -256,7 +256,7 @@ sssNameData&&sssNameData.map((n)=>{
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content mx-auto">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Cultural Coordinator</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Junior Cultural Coordinator</h1>
       </div>
       <div class="modal-body">
       {
