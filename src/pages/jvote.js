@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 
-function Name() {
+function Vame() {
   const[sspNameData,setsspNames] = useState()
   const[ssvpNameData,setssvpNames] = useState()
   const[sssNameData,setsssNames] = useState()
@@ -301,4 +301,4 @@ sccNameData&&sccNameData.map((n)=>{
   )
 }
 
-export default Name     
+export default Vame     
