@@ -699,12 +699,12 @@ shvcNames.on('value', (snapshot) => {
 
 <div class="col p-1 rounded-2 ">
     <center>
-        <h3 class="text-white">Shaurya Vice-Captain</h3>
+        <h3 class="text-white">Sathya Captain</h3>
     </center>
     <div class="card bg-dark rounded-0">
         <div class="card-body p-0">
             <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{shvc && shvc.length}</p>
+            <p class="card-text text-white py-1 px-2">{sc && sc.length}</p>
         </div>
     </div>
     <div class="card bg-transparent mt-2">
@@ -717,7 +717,7 @@ shvcNames.on('value', (snapshot) => {
                     </tr>
                 </thead>
                 { 
-                    shvc && shvc.map((v) => {
+                    sc && sc.map((v) => {
                         return (
                             <tbody>
                                 <tr>
