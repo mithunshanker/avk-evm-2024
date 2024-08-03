@@ -221,7 +221,7 @@ shvcNames.on('value', (snapshot) => {
 <nav class="navbar navbar-expand-lg bg-black navbar-dark border-bottom border-1 border-dark mb-3">
   <div class="container-fluid text-center my-2 ">
     
-  <div class="p-1 mx-auto">
+  <div class="mx-auto">
   <a class="navbar-brand" href="#">
      <span class="fw-bolder font-monospace">Election Commission</span><br/>
      <span class="lead">Adarsh Vidya Kendra</span>  
@@ -240,10 +240,11 @@ shvcNames.on('value', (snapshot) => {
         <h3 class="text-white">Senior Students President</h3>
       </center>
       <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-          <p class="card-text text-white py-1 px-2">{sspvoteData&&sspvoteData.length}</p>
-        </div>
+      <div class="d-flex p-0">
+  <div class="p-2 w-100 text-white bg-black p-2 text-start fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{sspvoteData&&sspvoteData.length}</div>
+</div>
+
       </div>
       <div class="card bg-transparent mt-2">
         <div class="card-body p-0">
@@ -281,10 +282,11 @@ shvcNames.on('value', (snapshot) => {
         <h3 class="text-white">Senior Students Vice President</h3>
       </center>
       <div class="card bg-dark rounded-0">
-          <div class="card-body p-0">
-            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{ssvpvoteData&&ssvpvoteData.length}</p>
-          </div>
+      <div class="d-flex p-0">
+  <div class="p-2 w-100 text-white bg-black p-2 text-start fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{ssvpvoteData&&ssvpvoteData.length}</div>
+</div>
+
       </div>
       <div class="card bg-transparent mt-2">
         <div class="card-body p-0">
@@ -317,20 +319,16 @@ shvcNames.on('value', (snapshot) => {
            </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="container-fluid text-center">
-  <div class="row">
     <div class="col p-1 rounded-2 ">
       <center>
-        <h3 class="text-white">Senior Students Secratary</h3>
+        <h3 class="text-white">Senior Students Secretary</h3>
       </center>
       <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-          <p class="card-text text-white py-1 px-2">{sssvoteData&&sssvoteData.length}</p>
-        </div>
+      <div class="d-flex p-0 text-start">
+  <div class="p-2 w-100 text-white bg-black p-2 fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{sssvoteData&&sssvoteData.length}</div>
+</div>
+
       </div>
       <div class="card bg-transparent mt-2">
       <div class="card-body p-0">
@@ -365,15 +363,22 @@ shvcNames.on('value', (snapshot) => {
 
 
     </div>
+  </div>
+</div>
+
+<div class="container-fluid text-center">
+  <div class="row">
+
     <div class="col p-1 rounded-2 ">
       <center>
         <h3 class="text-white">Senior Cultural Coordinator</h3>
       </center>
       <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-          <p class="card-text text-white py-1 px-2">{sccvoteData&&sccvoteData.length}</p>
-        </div>
+      <div class="d-flex p-0">
+  <div class="p-2 w-100 text-white bg-black p-2 text-start fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{sccvoteData&&sccvoteData.length}</div>
+</div>
+
       </div>
       <div class="card bg-transparent mt-2">
       <div class="card-body p-0">
@@ -406,6 +411,50 @@ shvcNames.on('value', (snapshot) => {
          </div>
     </div>
     </div>
+    <div class="col p-1 rounded-2 ">
+      <center>
+        <h3 class="text-white">Junior Cultural Coordinator</h3>
+      </center>
+      <div class="card bg-dark rounded-0">
+      <div class="d-flex p-0">
+  <div class="p-2 w-100 text-white bg-black p-2 text-start fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{jccvoteData&&jccvoteData.length}</div>
+</div>
+
+      </div>
+      <div class="card bg-transparent mt-2">
+      <div class="card-body p-0">
+        <table class="table table-striped table-dark">
+          <thead class="p-0">
+            <tr class="table-dark">
+              <th><h5 class="p-0">Candidates</h5></th>
+              <th><h5 class="p-0">Votes</h5></th>
+            </tr>
+          </thead>
+  { 
+ jccvoteData&&jccvoteData.map((v)=>{
+  return(
+
+
+        
+         <tbody>
+            <tr>
+              <td>{v.name}</td>
+              <td>{v.value}</td>
+            </tr>
+          </tbody>
+ 
+
+  )
+ })
+ 
+ }
+           </table>
+         </div>
+    </div>
+    </div>
+
+
   </div>
 
 
@@ -415,10 +464,11 @@ shvcNames.on('value', (snapshot) => {
         <h3 class="text-white">Junior Students President</h3>
       </center>
       <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-          <p class="card-text text-white py-1 px-2">{jspvoteData&&jspvoteData.length}</p>
-        </div>
+      <div class="d-flex p-0">
+  <div class="p-2 w-100 text-white bg-black p-2 text-start fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{jspvoteData&&jspvoteData.length}</div>
+</div>
+
       </div>
       <div class="card bg-transparent mt-2">
         <div class="card-body p-0">
@@ -456,10 +506,11 @@ shvcNames.on('value', (snapshot) => {
         <h3 class="text-white">Junior Students Vice President</h3>
       </center>
       <div class="card bg-dark rounded-0">
-          <div class="card-body p-0">
-            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{jsvpvoteData&&jsvpvoteData.length}</p>
-          </div>
+
+          <div class="d-flex p-0">
+  <div class="p-2 w-100 text-white bg-black p-2 text-start fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{jsvpvoteData&&jsvpvoteData.length}</div>
+</div>
       </div>
       <div class="card bg-transparent mt-2">
         <div class="card-body p-0">
@@ -492,20 +543,16 @@ shvcNames.on('value', (snapshot) => {
            </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="container-fluid text-center">
-  <div class="row">
     <div class="col p-1 rounded-2 ">
       <center>
         <h3 class="text-white">Junior Students Secratary</h3>
       </center>
       <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-          <p class="card-text text-white py-1 px-2">{jssvoteData&&jssvoteData.length}</p>
-        </div>
+      <div class="d-flex p-0">
+  <div class="p-2 w-100 text-white bg-black p-2 text-start fs-5 fw-semibold">Total Candidates</div>
+  <div class="p-2 flex-shrink-1 text-white py-1 px-4">{jssvoteData&&jssvoteData.length}</div>
+</div>
+
       </div>
       <div class="card bg-transparent mt-2">
       <div class="card-body p-0">
@@ -540,47 +587,13 @@ shvcNames.on('value', (snapshot) => {
 
 
     </div>
-    <div class="col p-1 rounded-2 ">
-      <center>
-        <h3 class="text-white">Junior Cultural Coordinator</h3>
-      </center>
-      <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-          <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-          <p class="card-text text-white py-1 px-2">{jccvoteData&&jccvoteData.length}</p>
-        </div>
-      </div>
-      <div class="card bg-transparent mt-2">
-      <div class="card-body p-0">
-        <table class="table table-striped table-dark">
-          <thead class="p-0">
-            <tr class="table-dark">
-              <th><h5 class="p-0">Candidates</h5></th>
-              <th><h5 class="p-0">Votes</h5></th>
-            </tr>
-          </thead>
-  { 
- jccvoteData&&jccvoteData.map((v)=>{
-  return(
+  </div>
+</div>
+
+<div class="container-fluid text-center">
+  <div class="row">
 
 
-        
-         <tbody>
-            <tr>
-              <td>{v.name}</td>
-              <td>{v.value}</td>
-            </tr>
-          </tbody>
- 
-
-  )
- })
- 
- }
-           </table>
-         </div>
-    </div>
-    </div>
 
     <div class="col p-1 rounded-2 ">
       <center>
@@ -623,117 +636,7 @@ shvcNames.on('value', (snapshot) => {
          </div>
     </div>
     </div>
-
-
     <div class="col p-1 rounded-2 ">
-    <center>
-        <h3 class="text-white">Dharma Captain</h3>
-    </center>
-    <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{DC && DC.length}</p>
-        </div>
-    </div>
-    <div class="card bg-transparent mt-2">
-        <div class="card-body p-0">
-            <table class="table table-striped table-dark">
-                <thead class="p-0">
-                    <tr class="table-dark">
-                        <th><h5 class="p-0">Candidates</h5></th>
-                        <th><h5 class="p-0">Votes</h5></th>
-                    </tr>
-                </thead>
-                { 
-                    DC && DC.map((v) => {
-                        return (
-                            <tbody>
-                                <tr>
-                                    <td>{v.name}</td>
-                                    <td>{v.value}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    })
-                }
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="col p-1 rounded-2 ">
-    <center>
-        <h3 class="text-white">Shaurya Captain</h3>
-    </center>
-    <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{shc && shc.length}</p>
-        </div>
-    </div>
-    <div class="card bg-transparent mt-2">
-        <div class="card-body p-0">
-            <table class="table table-striped table-dark">
-                <thead class="p-0">
-                    <tr class="table-dark">
-                        <th><h5 class="p-0">Candidates</h5></th>
-                        <th><h5 class="p-0">Votes</h5></th>
-                    </tr>
-                </thead>
-                { 
-                    shc && shc.map((v) => {
-                        return (
-                            <tbody>
-                                <tr>
-                                    <td>{v.name}</td>
-                                    <td>{v.value}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    })
-                }
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="col p-1 rounded-2 ">
-    <center>
-        <h3 class="text-white">Sathya Captain</h3>
-    </center>
-    <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{sc && sc.length}</p>
-        </div>
-    </div>
-    <div class="card bg-transparent mt-2">
-        <div class="card-body p-0">
-            <table class="table table-striped table-dark">
-                <thead class="p-0">
-                    <tr class="table-dark">
-                        <th><h5 class="p-0">Candidates</h5></th>
-                        <th><h5 class="p-0">Votes</h5></th>
-                    </tr>
-                </thead>
-                { 
-                    sc && sc.map((v) => {
-                        return (
-                            <tbody>
-                                <tr>
-                                    <td>{v.name}</td>
-                                    <td>{v.value}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    })
-                }
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="col p-1 rounded-2 ">
     <center>
         <h3 class="text-white">Ahimsa Vice-Captain</h3>
     </center>
@@ -769,50 +672,15 @@ shvcNames.on('value', (snapshot) => {
     </div>
 </div>
 
-<div class="col p-1 rounded-2 ">
-    <center>
-        <h3 class="text-white">Sathya Vice-Captain</h3>
-    </center>
-    <div class="card bg-dark rounded-0">
-        <div class="card-body p-0">
-            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{svc && svc.length}</p>
-        </div>
-    </div>
-    <div class="card bg-transparent mt-2">
-        <div class="card-body p-0">
-            <table class="table table-striped table-dark">
-                <thead class="p-0">
-                    <tr class="table-dark">
-                        <th><h5 class="p-0">Candidates</h5></th>
-                        <th><h5 class="p-0">Votes</h5></th>
-                    </tr>
-                </thead>
-                { 
-                    svc && svc.map((v) => {
-                        return (
-                            <tbody>
-                                <tr>
-                                    <td>{v.name}</td>
-                                    <td>{v.value}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    })
-                }
-            </table>
-        </div>
-    </div>
-</div>
 
-<div class="col p-1 rounded-2 ">
+    <div class="col p-1 rounded-2 ">
     <center>
-        <h3 class="text-white">Shaurya Vice-Captain</h3>
+        <h3 class="text-white">Dharma Captain</h3>
     </center>
     <div class="card bg-dark rounded-0">
         <div class="card-body p-0">
             <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
-            <p class="card-text text-white py-1 px-2">{shvc && shvc.length}</p>
+            <p class="card-text text-white py-1 px-2">{DC && DC.length}</p>
         </div>
     </div>
     <div class="card bg-transparent mt-2">
@@ -825,7 +693,7 @@ shvcNames.on('value', (snapshot) => {
                     </tr>
                 </thead>
                 { 
-                    shvc && shvc.map((v) => {
+                    DC && DC.map((v) => {
                         return (
                             <tbody>
                                 <tr>
@@ -877,7 +745,166 @@ shvcNames.on('value', (snapshot) => {
     </div>
 </div>
 
+
+
+
+
+
+
+
+
+
   </div>
+</div>
+
+<div class="container-fluid text-center">
+  <div class="row">
+  <div class="col p-1 rounded-2 ">
+    <center>
+        <h3 class="text-white">Shaurya Captain</h3>
+    </center>
+    <div class="card bg-dark rounded-0">
+        <div class="card-body p-0">
+            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+            <p class="card-text text-white py-1 px-2">{shc && shc.length}</p>
+        </div>
+    </div>
+    <div class="card bg-transparent mt-2">
+        <div class="card-body p-0">
+            <table class="table table-striped table-dark">
+                <thead class="p-0">
+                    <tr class="table-dark">
+                        <th><h5 class="p-0">Candidates</h5></th>
+                        <th><h5 class="p-0">Votes</h5></th>
+                    </tr>
+                </thead>
+                { 
+                    shc && shc.map((v) => {
+                        return (
+                            <tbody>
+                                <tr>
+                                    <td>{v.name}</td>
+                                    <td>{v.value}</td>
+                                </tr>
+                            </tbody>
+                        )
+                    })
+                }
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col p-1 rounded-2 ">
+    <center>
+        <h3 class="text-white">Shaurya Vice-Captain</h3>
+    </center>
+    <div class="card bg-dark rounded-0">
+        <div class="card-body p-0">
+            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+            <p class="card-text text-white py-1 px-2">{shvc && shvc.length}</p>
+        </div>
+    </div>
+    <div class="card bg-transparent mt-2">
+        <div class="card-body p-0">
+            <table class="table table-striped table-dark">
+                <thead class="p-0">
+                    <tr class="table-dark">
+                        <th><h5 class="p-0">Candidates</h5></th>
+                        <th><h5 class="p-0">Votes</h5></th>
+                    </tr>
+                </thead>
+                { 
+                    shvc && shvc.map((v) => {
+                        return (
+                            <tbody>
+                                <tr>
+                                    <td>{v.name}</td>
+                                    <td>{v.value}</td>
+                                </tr>
+                            </tbody>
+                        )
+                    })
+                }
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col p-1 rounded-2 ">
+    <center>
+        <h3 class="text-white">Sathya Captain</h3>
+    </center>
+    <div class="card bg-dark rounded-0">
+        <div class="card-body p-0">
+            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+            <p class="card-text text-white py-1 px-2">{sc && sc.length}</p>
+        </div>
+    </div>
+    <div class="card bg-transparent mt-2">
+        <div class="card-body p-0">
+            <table class="table table-striped table-dark">
+                <thead class="p-0">
+                    <tr class="table-dark">
+                        <th><h5 class="p-0">Candidates</h5></th>
+                        <th><h5 class="p-0">Votes</h5></th>
+                    </tr>
+                </thead>
+                { 
+                    sc && sc.map((v) => {
+                        return (
+                            <tbody>
+                                <tr>
+                                    <td>{v.name}</td>
+                                    <td>{v.value}</td>
+                                </tr>
+                            </tbody>
+                        )
+                    })
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="col p-1 rounded-2 ">
+    <center>
+        <h3 class="text-white">Sathya Vice-Captain</h3>
+    </center>
+    <div class="card bg-dark rounded-0">
+        <div class="card-body p-0">
+            <h5 class="card-title text-white bg-black p-2">Total Candidates</h5>
+            <p class="card-text text-white py-1 px-2">{svc && svc.length}</p>
+        </div>
+    </div>
+    <div class="card bg-transparent mt-2">
+        <div class="card-body p-0">
+            <table class="table table-striped table-dark">
+                <thead class="p-0">
+                    <tr class="table-dark">
+                        <th><h5 class="p-0">Candidates</h5></th>
+                        <th><h5 class="p-0">Votes</h5></th>
+                    </tr>
+                </thead>
+                { 
+                    svc && svc.map((v) => {
+                        return (
+                            <tbody>
+                                <tr>
+                                    <td>{v.name}</td>
+                                    <td>{v.value}</td>
+                                </tr>
+                            </tbody>
+                        )
+                    })
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+
+  </div>
+
+
 </div>
 
 <footer class="border-top border-dark border-1 py-2">
