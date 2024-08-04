@@ -110,7 +110,8 @@ function Name() {
     
     }
     else{
-      alert("Please Vote For All The Posts")
+
+      alert("Make Sure To Vote For Every Category")
     }
    }
 
@@ -126,45 +127,55 @@ function Name() {
 
     <div class="container-fluid mx-auto">
 
-      <div class="h-100 d-flex align-items-center justify-content-center ">
-      <button type="button" class="btn btn-lg btn-dark rounded-0 border border-1 border-secondary" data-bs-toggle="modal" data-bs-target="#ssp">      
+      <div class="h-100 d-flex align-items-center justify-content-center mt-5 pt-5">
+      <button type="button" class="btn btn-lg btn-dark rounded-0 border border-1 border-secondary mt-5" data-bs-toggle="modal" data-bs-target="#ssp">      
         <h1 class="display-1">Vote !</h1>
 
     </button>
       </div>
 
+      <footer class="border-top border-dark border-1 py-2 fixed-bottom">
+  <center>
+  <p class="text-secondary fw-semibold font-monospace">Developed by <span class="font-monospace fst-italic">AVK IT CELL @2024</span></p>
 
+  </center>
+</footer>
       
      
       
       <div class="modal fade" id="ssp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
           <div class="modal-content">
-            <div class="modal-header">      
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student President</h1>
+            <div class="modal-header mx-auto">      
+        <h1 class="modal-title display-2" id="staticBackdropLabel">Senior Student President</h1>
             </div>
             <div class="modal-body">
               {
                 sspNameData&&sspNameData.map((n)=>{
     return(
-        <div class="form-check" >
-  <input class="form-check-input" type="radio" name="flexRadioDefault1" id={`flexRadioDefault1${n.name}`} onChange={(e)=>{
+        <div class="form-check " >
+                    <div class="container mx-auto ">
+
+          <div class="container mx-auto ">
+          <br/>
+  <input class="form-check-input btn btn-lg p-0 border-dark rounded-0 ms-auto mt-3 mx-3" type="radio" name="flexRadioDefault1" id={flexRadioDefault1${n.name}} onChange={(e)=>{
     if(e.target.checked){
-        setsspv(`/ssp/${n.id}/value`)
+        setsspv(/ssp/${n.id}/value)
     }
   }} required/>
-  <label class="form-check-label text-black" for={`flexRadioDefault1${n.name}`}>
-    {n.name}
+  <label class="form-check-label text-black ms-auto mb-3 " for={flexRadioDefault1${n.name}}>
+    <h1 class="display-3">{n.name}</h1>
   </label>
-  
+  </div>
+  </div>
 </div>
 
     )
                 })
               }
             </div>
-            <div class="modal-footer">
-            <button type="submit" class="btn btn-dark fw-bold rounded-0" data-bs-toggle="modal" data-bs-target="#ssvp">
+            <div class="modal-footer mx-auto">
+            <button type="submit" class="btn btn-dark btn-lg fw-bold rounded-0 fs-2 p-4" data-bs-toggle="modal" data-bs-target="#ssvp">
         Next
       </button>
             </div>
@@ -177,22 +188,28 @@ function Name() {
       <div class="modal fade" id="ssvp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student Vice President</h1>
+      <div class="modal-header mx-auto">
+        <h1 class="modal-title display-2" id="staticBackdropLabel">Senior Student Vice President</h1>
       </div>
       <div class="modal-body">
               {
         ssvpNameData&&ssvpNameData.map((n)=>{
     return(
         <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault2" id={`flexRadioDefault2${n.name}`} onChange={(e)=>{
+          <div class="container mx-auto ">
+
+<div class="container mx-auto ">
+<br/>
+  <input class="form-check-input btn btn-lg p-0 border-dark rounded-0 ms-auto mt-3 mx-3" type="radio" name="flexRadioDefault2" id={flexRadioDefault2${n.name}} onChange={(e)=>{
     if(e.target.checked){
-        setssvpv(`/ssvp/${n.id}/value`)
+        setssvpv(/ssvp/${n.id}/value)
     }
   }} required/>
-  <label class="form-check-label text-black fw-semibold " for={`flexRadioDefault2${n.name}`}>
-    {n.name}
+  <label class="form-check-label text-black ms-auto mb-3" for={flexRadioDefault2${n.name}}>
+    <h1 class="display-3">{n.name}</h1>
   </label>
+</div>
+</div>
 </div>
 
     )
@@ -200,11 +217,11 @@ function Name() {
         
            }
       </div>
-      <div class="modal-footer">
-      <button type="submit" class="btn btn-warning rounded-0 text-black fw-bold" data-bs-toggle="modal" data-bs-target="#ssp">
+      <div class="modal-footer mx-auto">
+      <button type="submit" class="btn btn-warning btn-lg rounded-0 text-black fw-bold fs-2 p-4" data-bs-toggle="modal" data-bs-target="#ssp">
   Previous
 </button>
-      <button type="submit" class="btn btn-dark fw-bold rounded-0" data-bs-toggle="modal" data-bs-target="#sss">
+      <button type="submit" class="btn btn-dark btn-lg fw-bold rounded-0 fs-2 p-4" data-bs-toggle="modal" data-bs-target="#sss">
   Next
 </button>
       </div>
@@ -217,22 +234,29 @@ function Name() {
       <div class="modal fade" id="sss" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Student Secretary</h1>
+      <div class="modal-header mx-auto">
+        <h1 class="modal-title display-2" id="staticBackdropLabel">Senior Student Secretary</h1>
       </div>
       <div class="modal-body">
       {
 sssNameData&&sssNameData.map((n)=>{
     return(
         <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault3" id={`flexRadioDefault3${n.name}`} onChange={(e)=>{
+          <div class="container mx-auto ">
+
+<div class="container mx-auto ">
+<br/>
+  <input class="form-check-input btn btn-lg p-0 border-dark rounded-0 ms-auto mt-3 mx-3" type="radio" name="flexRadioDefault3" id={flexRadioDefault3${n.name}} onChange={(e)=>{
     if(e.target.checked){
-        setsssv(`/sss/${n.id}/value`)
+        setsssv(/sss/${n.id}/value)
     }
   }} />
-  <label class="form-check-label text-black" for={`flexRadioDefault3${n.name}`}>
-    {n.name}
+  <label class="form-check-label text-black ms-auto mb-3" for={flexRadioDefault3${n.name}}>
+  <h1 class="display-3">{n.name}</h1>
+
   </label>
+</div>
+</div>
 </div>
 
     )
@@ -240,11 +264,11 @@ sssNameData&&sssNameData.map((n)=>{
 
    }
       </div>
-      <div class="modal-footer">
-      <button type="submit" class="btn btn-warning rounded-0 text-black fw-bold" data-bs-toggle="modal" data-bs-target="#ssvp">
+      <div class="modal-footer mx-auto">
+      <button type="submit" class="btn btn-warning btn-lg rounded-0 text-black fw-bold fs-2 p-4" data-bs-toggle="modal" data-bs-target="#ssvp">
   Previous
 </button>
-      <button type="button" class="btn btn-dark fw-bold rounded-0" data-bs-toggle="modal" data-bs-target="#scc">
+      <button type="button" class="btn btn-dark btn-lg fw-bold rounded-0 fs-2 p-4" data-bs-toggle="modal" data-bs-target="#scc">
   Next
 </button>
       </div>
@@ -258,22 +282,28 @@ sssNameData&&sssNameData.map((n)=>{
 <div class="modal fade" id="scc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content mx-auto">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Senior Cultural Coordinator</h1>
+      <div class="modal-header mx-auto">
+        <h1 class="modal-title display-2" id="staticBackdropLabel">Senior Cultural Coordinator</h1>
       </div>
       <div class="modal-body">
       {
 sccNameData&&sccNameData.map((n)=>{
     return(
         <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault4" id={`flexRadioDefault4${n.name}`} onChange={(e)=>{
+           <div class="container mx-auto ">
+
+<div class="container mx-auto ">
+<br/>
+  <input class="form-check-input btn btn-lg p-0 border-dark rounded-0 ms-auto mt-3 mx-3" type="radio" name="flexRadioDefault4" id={flexRadioDefault4${n.name}} onChange={(e)=>{
     if(e.target.checked){
-        setsccv(`/scc/${n.id}/value`)
+        setsccv(/scc/${n.id}/value)
     }
   }} />
-  <label class="form-check-label text-black" for={`flexRadioDefault4${n.name}`}>
-    {n.name}
+  <label class="form-check-label text-black ms-auto mb-3" for={flexRadioDefault4${n.name}}>
+  <h1 class="display-3">{n.name}</h1>
   </label>
+</div>
+</div>
 </div>
 
     )
@@ -281,11 +311,11 @@ sccNameData&&sccNameData.map((n)=>{
 
    }
       </div>
-      <div class="modal-footer">
-      <button type="submit" class="btn btn-warning rounded-0 text-black fw-bold" data-bs-toggle="modal" data-bs-target="#sss">
+      <div class="modal-footer mx-auto">
+      <button type="submit" class="btn btn-warning rounded-0 text-black fw-bold btn-lg fs-2 p-4" data-bs-toggle="modal" data-bs-target="#sss">
   Previous
 </button>
-      <button type="button" class="btn btn-success rounded-0 text-black fw-bold" onClick={castvote} >Submit</button>
+      <button type="button" class="btn btn-success rounded-0 text-black fw-bold btn-lg fs-2 p-4" onClick={castvote} >Submit</button>
 
       </div>
     </div>
@@ -301,4 +331,4 @@ sccNameData&&sccNameData.map((n)=>{
   )
 }
 
-export default Name     
+export default Name
